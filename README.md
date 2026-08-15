@@ -20,10 +20,10 @@
       background: #ffffff;
     }
 
-    /* ================= NAVIGATION ================= */
+    /* NAVIGATION */
 
     nav {
-      height: 60px;
+      min-height: 60px;
       background: white;
       display: flex;
       align-items: center;
@@ -59,21 +59,15 @@
       color: #7b3fa0;
     }
 
-    /* ================= HOME ================= */
+    /* HOME */
 
     .hero {
       min-height: 470px;
-
-      /* You can replace this with your own background image */
-      background:
-        linear-gradient(
-          rgba(61, 31, 78, 0.65),
-          rgba(61, 31, 78, 0.65)
-        ),
-        url("beach.jpg");
-
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(
+        135deg,
+        #80698b,
+        #684f75
+      );
 
       display: flex;
       justify-content: center;
@@ -102,25 +96,41 @@
       border-radius: 10px;
     }
 
-    /* ================= PROFILE ================= */
+    /* PROFILE */
 
     .profile {
       background: #eee7ff;
       padding: 50px 9%;
-
       display: flex;
       align-items: center;
       gap: 40px;
     }
 
-    .profile img {
+    .profile-photo {
       width: 200px;
       height: 200px;
-      object-fit: cover;
+      flex-shrink: 0;
       border-radius: 8px;
+      overflow: hidden;
+      background: #d9c8ef;
+      box-shadow: 0 8px 20px rgba(60,30,80,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      box-shadow:
-        0 8px 20px rgba(60,30,80,0.15);
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      color: #542b72;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
     }
 
     .profile-text {
@@ -139,7 +149,7 @@
       color: #514858;
     }
 
-    /* ================= SECTIONS ================= */
+    /* SECTIONS */
 
     section {
       padding: 70px 9%;
@@ -152,12 +162,11 @@
       margin-bottom: 40px;
     }
 
-    /* ================= CARDS ================= */
+    /* CARDS */
 
     .cards {
       max-width: 1100px;
       margin: auto;
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
@@ -168,27 +177,21 @@
       border: 1px solid #e8dfed;
       border-radius: 8px;
       overflow: hidden;
-
-      box-shadow:
-        0 5px 15px rgba(50,30,70,0.08);
-
+      box-shadow: 0 5px 15px rgba(50,30,70,0.08);
       transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow:
-        0 10px 25px rgba(50,30,70,0.13);
+      box-shadow: 0 10px 25px rgba(50,30,70,0.13);
     }
 
     .card-image {
       height: 150px;
       background: #eee7ff;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       font-size: 55px;
     }
 
@@ -207,7 +210,7 @@
       color: #625b67;
     }
 
-    /* ================= ABOUT ================= */
+    /* ABOUT */
 
     .about {
       background: #faf8fc;
@@ -216,7 +219,6 @@
     .about-container {
       max-width: 1050px;
       margin: auto;
-
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 25px;
@@ -227,6 +229,7 @@
       padding: 30px;
       border: 1px solid #eee5f3;
       box-shadow: 0 5px 15px rgba(50,30,70,0.06);
+      border-radius: 8px;
     }
 
     .about-box h3 {
@@ -240,7 +243,7 @@
       color: #625b67;
     }
 
-    /* ================= FAMILY ================= */
+    /* FAMILY */
 
     .family {
       text-align: center;
@@ -253,7 +256,7 @@
       color: #625b67;
     }
 
-    /* ================= DREAMS ================= */
+    /* DREAMS */
 
     .dreams {
       background: #eee7ff;
@@ -271,13 +274,10 @@
       display: inline-block;
       margin-top: 25px;
       padding: 13px 25px;
-
       background: #67358a;
       color: white;
-
       text-decoration: none;
       border-radius: 25px;
-
       transition: 0.3s;
     }
 
@@ -285,7 +285,7 @@
       background: #4e2869;
     }
 
-    /* ================= FOOTER ================= */
+    /* FOOTER */
 
     footer {
       background: #4e2869;
@@ -299,12 +299,12 @@
       font-size: 13px;
     }
 
-    /* ================= MOBILE ================= */
+    /* MOBILE */
 
     @media (max-width: 750px) {
 
       nav {
-        padding: 0 5%;
+        padding: 12px 5%;
       }
 
       nav ul {
@@ -316,7 +316,7 @@
         text-align: center;
       }
 
-      .profile img {
+      .profile-photo {
         width: 180px;
         height: 180px;
       }
@@ -332,20 +332,24 @@
       .hero {
         min-height: 400px;
       }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .profile-text h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
-
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- NAVIGATION -->
 
   <nav>
-
-    <div class="logo">
-      RYZA MAHASOL
-    </div>
+    <div class="logo">RYZA MAHASOL</div>
 
     <ul>
       <li><a href="#home">Home</a></li>
@@ -354,47 +358,43 @@
       <li><a href="#family">Family</a></li>
       <li><a href="#dreams">Dreams</a></li>
     </ul>
-
   </nav>
 
 
-  <!-- ================= HOME ================= -->
+  <!-- HOME -->
 
   <section class="hero" id="home">
-
     <div>
-
-      <h1>
-        My Personal Portfolio
-      </h1>
+      <h1>My Personal Portfolio</h1>
 
       <div class="hero-line"></div>
 
-      <p>
-        LEARN • GROW • DREAM
-      </p>
-
+      <p>LEARN • GROW • DREAM</p>
     </div>
-
   </section>
 
 
-  <!-- ================= PROFILE ================= -->
+  <!-- PROFILE -->
 
   <section class="profile">
 
-    <!-- Replace formal.jpg with your formal photo -->
+    <div class="profile-photo">
 
-    <img
-      src="formal.jpg"
-      alt="Ryza Mahasol"
-    >
+      <img
+        src="formal.jpg"
+        alt="Ryza Mahasol"
+        onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='block';"
+      >
+
+      <div class="photo-placeholder" id="photoPlaceholder" style="display:none;">
+        RYZA<br>MAHASOL
+      </div>
+
+    </div>
 
     <div class="profile-text">
 
-      <h2>
-        RYZA MAHASOL
-      </h2>
+      <h2>RYZA MAHASOL</h2>
 
       <p>
         I am Ryza Mahasol, a Bachelor of Elementary Education
@@ -418,7 +418,7 @@
   </section>
 
 
-  <!-- ================= MAIN CARDS ================= -->
+  <!-- MAIN CARDS -->
 
   <section>
 
@@ -426,15 +426,11 @@
 
       <div class="card">
 
-        <div class="card-image">
-          💜
-        </div>
+        <div class="card-image">💜</div>
 
         <div class="card-content">
 
-          <h3>
-            About Me
-          </h3>
+          <h3>About Me</h3>
 
           <p>
             Get to know my personality, interests,
@@ -449,15 +445,11 @@
 
       <div class="card" id="school">
 
-        <div class="card-image">
-          🎓
-        </div>
+        <div class="card-image">🎓</div>
 
         <div class="card-content">
 
-          <h3>
-            My School Journey
-          </h3>
+          <h3>My School Journey</h3>
 
           <p>
             My journey as a Bachelor of Elementary
@@ -472,15 +464,11 @@
 
       <div class="card" id="family">
 
-        <div class="card-image">
-          🏡
-        </div>
+        <div class="card-image">🏡</div>
 
         <div class="card-content">
 
-          <h3>
-            My Family
-          </h3>
+          <h3>My Family</h3>
 
           <p>
             My family is one of the most important
@@ -497,22 +485,17 @@
   </section>
 
 
-  <!-- ================= ABOUT ME ================= -->
+  <!-- ABOUT ME -->
 
   <section class="about" id="about">
 
-    <h2 class="section-title">
-      About Me ♡
-    </h2>
+    <h2 class="section-title">About Me ♡</h2>
 
     <div class="about-container">
 
-
       <div class="about-box">
 
-        <h3>
-          🎓 My Education
-        </h3>
+        <h3>🎓 My Education</h3>
 
         <p>
           I am taking Bachelor of Elementary Education.
@@ -525,9 +508,7 @@
 
       <div class="about-box">
 
-        <h3>
-          🌷 My Interests
-        </h3>
+        <h3>🌷 My Interests</h3>
 
         <p>
           I love listening to music, reading Wattpad,
@@ -541,9 +522,7 @@
 
       <div class="about-box">
 
-        <h3>
-          ✨ My Personality
-        </h3>
+        <h3>✨ My Personality</h3>
 
         <p>
           I am a kind and determined person. I may be
@@ -556,9 +535,7 @@
 
       <div class="about-box">
 
-        <h3>
-          🌱 My Values
-        </h3>
+        <h3>🌱 My Values</h3>
 
         <p>
           I value family, education, kindness,
@@ -567,19 +544,16 @@
 
       </div>
 
-
     </div>
 
   </section>
 
 
-  <!-- ================= FAMILY ================= -->
+  <!-- FAMILY -->
 
-  <section class="family">
+  <section class="family" id="family-section">
 
-    <h2 class="section-title">
-      My Family ♡
-    </h2>
+    <h2 class="section-title">My Family ♡</h2>
 
     <p>
 
@@ -599,13 +573,11 @@
   </section>
 
 
-  <!-- ================= DREAMS ================= -->
+  <!-- DREAMS -->
 
   <section class="dreams" id="dreams">
 
-    <h2 class="section-title">
-      My Dreams ✨
-    </h2>
+    <h2 class="section-title">My Dreams ✨</h2>
 
     <p>
 
@@ -633,14 +605,12 @@
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <p>
-      <strong>
-        RYZA MAHASOL PORTFOLIO
-      </strong>
+      <strong>RYZA MAHASOL PORTFOLIO</strong>
     </p>
 
     <p>
@@ -653,10 +623,5 @@
 
   </footer>
 
-
 </body>
-</html>portfolio/
-│
-├── index.html
-├── formal.jpg
-└── beach.jpg
+</html>
